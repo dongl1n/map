@@ -1,5 +1,5 @@
 import {Scale} from './DNGL_scale.js';
-import marks from '../src/json/marks.json' assert { type: "json" };
+import marks from '../src/json/marks.json' with { type: "json" };
 
 
 /* ----------------------------------------------------------Const------------------------------------------------------------------------- */
@@ -8,7 +8,7 @@ const lat1 = 51.470556, lng1 = 120.441944;
 const lat2 = 45.595833, lng2 = 124.527778;
 const kmInDeg = 111;
 /* --------------------------------------------------------Global------------------------------------------------------------------------- */
-    let coorLat = 0, coorLng = 0;
+    let coorLat = 0, coorLng = 0, tab = 0;
 
 /* ----------------------------------------------------------Icon------------------------------------------------------------------------- */
 
@@ -111,7 +111,7 @@ const ZoomViewer = L.Control.extend({
 const zoomViewerControl = (new ZoomViewer()).addTo(map);
 
 let bounds = [[lat1, lng1], [lat2, lng2]];
-let physicalLayer = L.imageOverlay('https://psv4.userapi.com/c909328/u177349394/docs/d39/da9ec4ce68e3/physical-map.png?extra=GoxgzMy_VfJM1sMNVUdxPBG5tDGHbqUlGSHP6a9SWE_Q1T6NKU-uW6hES_1ThQsgGEQ03qkhqBKLKPl3nxrxfV2tVG4TfdzrGj1F-t0AAt38hx2J9-NYCugrvqNbdJVO2Jh14Q67gef-bgSH2YVwt4c', bounds).addTo(map);
+let physicalLayer = L.imageOverlay('https://raw.githubusercontent.com/dongl1n/map/version1/src/physical-map.png', bounds).addTo(map);
 let politicalLayer = L.imageOverlay('https://i.ibb.co/cT0X9s6/political-map-new.png', bounds);
 map.fitBounds(bounds);
 map.setView([((lat1*2 + lat2*2)/4), ((lng1*2 + lng2*2)/4)], 7);
@@ -127,7 +127,7 @@ const layers = {
 
 L.control.layers(layers).addTo(map);
 
-const info = document.querySelectorAll(".info-item");
+let info = document.querySelectorAll(".info-item");
 info[0].textContent = `Ширина карты: ${customDistance(lng2-lng1).toFixed(2)} км`;
 info[1].textContent = `Высота карты: ${customDistance(lat1-lat2).toFixed(2)} км`;
 info[2].textContent = `Ширина карты: ${physicalLayer.getElement().style.width}`;
@@ -157,6 +157,7 @@ map.addEventListener('click', (e)=>{
 })
 
 setInterval(()=>{
+    info = document.querySelectorAll(".info-item");
     const firstPxW = physicalLayer.getElement().style.width;
     const firstPxH = physicalLayer.getElement().style.height;
 
@@ -212,7 +213,7 @@ for(let i=0; i<marks.length; i++){
     opt2.classList = "option-marks2";
     selectDist[0].append(opt1);
     selectDist[1].append(opt2);
-    select.append(opt);
+    //select.append(opt);
 }
 
 for(let i=0; i<marks.length; i++){
@@ -224,14 +225,14 @@ for(let i=0; i<marks.length; i++){
 
 marksHTML[0].openPopup()
 
-select.addEventListener("click", () => {
+/*select.addEventListener("click", () => {
     select.addEventListener("change", () => {
         for(let i=0; i<marks.length; i++)
             if(marks[i].name === select.value)
                 marksHTML[i].openPopup();
         return;
     });
-});
+});*/
 
 const selectType = document.querySelector(".type-select");
 
@@ -283,6 +284,7 @@ selectDist[1].addEventListener("click", () => {
 });
 
 setInterval(()=>{
+    if(tab != 0) return;
     const input = document.querySelector('.type-input');
     const btn = document.querySelector('.add-btn');
     if(input?.value && coorLat && coorLng) btn.disabled = false;
@@ -299,7 +301,7 @@ document.querySelector('.add-btn').addEventListener('click', ()=>{
     const opt = document.createElement('option');
     opt.innerHTML = obj.name;
     opt.classList = "option-type";
-    document.querySelector('.info-select').append(opt);
+    //document.querySelector('.info-select').append(opt);
     let icon;
     switch(marks[marks.length-1].type){
         case "capital": icon = iconStar; break;
@@ -317,10 +319,36 @@ document.querySelector('.add-btn').addEventListener('click', ()=>{
 
 })
 
-document.querySelector('.save-btn').addEventListener("click", ()=>{
+/*document.querySelector('.save-btn').addEventListener("click", ()=>{
     document.querySelector(".textarea").value = JSON.stringify(marks);
 })
 
 document.querySelector('.load-btn').addEventListener("click", ()=>{
     location.reload();
+})*/
+
+let tabsList = document.querySelectorAll('.tab')
+
+for(let i=0; i<tabsList.length; i++)
+    tabsList[i].addEventListener("click", ()=>{
+        tabsList[tab].classList.remove("active");
+        tabsList[i].classList.add("active");
+        tab = i;
+
+        switch(i){
+            case 0:{
+                let list = document.querySelectorAll(".tab0");
+                list.forEach(el =>{
+                    el.classList.remove("unvisible");
+                })
+                break;
+            }
+            case 1:{
+                let list = document.querySelectorAll(".tab0");
+                list.forEach(el =>{
+                    el.classList.add("unvisible");
+                })
+            }
+        }
+        
 })

@@ -72,6 +72,34 @@
   border-bottom: rgba(0, 0, 0, 0.2) 3px solid;
 }
 
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+  text-transform: lowercase;
+  margin: 0px 0px 40px 0px;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.active {
+  cursor: auto;
+  border-bottom: white 1px solid;
+  transition: 2s linear;
+}
+
+.unvisible {
+  display: none !important;
+}
+
 .info-box {
   display: flex;
   flex-direction: column;
@@ -79,11 +107,11 @@
   top: 100px;
   left: 0;
   margin-left: 15px;
-  padding: 30px 30px 5px 30px;
   width: 400px;
-  height: 700px;
+  height: 600px;
   background-color: #CE7857;
   border: #D2B396 2px solid;
+  padding: 20px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   z-index: 500;
 }
@@ -92,14 +120,14 @@
   display: flex;
   flex-direction: column;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
   text-align: start;
 }
 .info__header {
   margin-bottom: 5px;
-  font-size: 24px;
+  font-size: 18px;
   align-self: center;
   color: white;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
@@ -114,7 +142,7 @@
 
 .info-select {
   padding: 5px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   border: #fc8151 2px solid;
   outline: 0px;
@@ -135,7 +163,7 @@
   display: block;
   width: 230px;
   padding: 5px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   border: #fc8151 2px solid;
   outline: 0px;
@@ -208,4 +236,12 @@
   font-weight: 600;
   color: white;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+
+.add-btn {
+  border-color: #fc8151;
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px 0px 20px 0px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

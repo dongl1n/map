@@ -1,0 +1,128 @@
+[
+{
+    "name": "Тут ебали маму Кочана",
+    "lat": 47.523556,
+    "lng": 121.67194400000001,
+    "type": "city",
+    "area": "",
+    "population": ""
+
+},
+{
+    "name": "Тут ебали маму арийцев",
+    "lat": 46.941,
+    "lng": 121.852,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "Тут ебали маму гнома",
+    "lat": 47.9,
+    "lng": 122.87,
+    "type": "capital",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "1",
+    "lat": 47.773438,
+    "lng": 121.431641,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "2",
+    "lat": 47.864258,
+    "lng": 122.084961,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "3",
+    "lat": 48.306641,
+    "lng": 122.033203,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "4",
+    "lat": 47.732422,
+    "lng": 122.410156,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "5",
+    "lat": 47.349609,
+    "lng": 122.78125,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "6",
+    "lat": 48.086914,
+    "lng": 122.674805,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "7",
+    "lat": 47.935547,
+    "lng": 123.288086,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "8",
+    "lat": 49.444336,
+    "lng": 121.833984,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "9",
+    "lat": 48.749023,
+    "lng": 122.610352,
+    "type": "capital-region",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "10",
+    "lat": 49.449219,
+    "lng": 122.224609,
+    "type": "village",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "11",
+    "lat": 47.759766,
+    "lng": 123.552734,
+    "type": "village",
+    "area": "",
+    "population": ""
+},
+{
+    "name": "Дом Юми",
+    "lat": 47.75293,
+    "lng": 123.545654,
+    "type": "house"
+},
+{
+    "name": "Институт",
+    "lat": 47.743896,
+    "lng": 123.527344,
+    "type": "university"
+}
+
+]

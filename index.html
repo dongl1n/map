@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="info-box">
+        <div class="info">
+            <div class="info__header">Информация о карте</div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+            <div class="info-item"></div>
+        </div>
+        <div class="mark-distance">
+            <div class="info__header">Расстояние между точками</div>
+            <select class="info-select-distance"></select>
+            <div class="dist">0.000 км.</div>
+            <select class="info-select-distance"></select>
+            </select>
+        </div>
+        <div class="mark-info">
+            <div class="info__header">Менеджер точек</div>
+            <select class="info-select">
+            </select>
+        </div>
+        <div class="mark-add">
+            <div class="info__header">Добавление точек</div>
+            <div class="mark-param">
+                <input class="type-input" type="text" name="" id="" placeholder="Название">
+                <select class="type-select"></select>
+            </div>
+            <button class="add-btn" disabled>Добавить точку на коор. пос. клика</button>
+        </div>
+        <div class="mark-file">
+            <div class="info__header">Работа с файлами</div>
+            <div class="mark-param">
+                <button class="save-btn">Сохранить точки</button>
+                <button class="load-btn">Загрузить точки</button>
+            </div>
+            <textarea name="" id="" cols="30" rows="5" class="textarea"></textarea>
+        </div>
+        <div class="marks-help">
+            <div class="help-item">
+                <img src="./src/svg/circle-red.svg" alt=""> - Столица
+            </div>
+            <div class="help-item">
+                <img src="./src/svg/circle-black-dot.svg" alt=""> - Столица региона
+            </div>
+            <div class="help-item">
+                <img src="./src/svg/circle-white.svg" alt=""> - Город
+            </div>
+            <div class="help-item">
+                <img src="./src/svg/circle-black.svg" alt=""> - Село
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="./app/index.js" type="module" crossorigin></script>
+</html>
